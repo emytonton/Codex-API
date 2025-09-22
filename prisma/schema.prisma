@@ -17,6 +17,9 @@ model User {
   profilePicture  String?
   phoneNumber     String?
   description     String?  @db.Text
+  isVerified      Boolean  @default(false)
+  verificationCode String?
+  verificationCodeExpiresAt DateTime?
   
   bookCases       BookCase[]
   userBooks       UserBook[]

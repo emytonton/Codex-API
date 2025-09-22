@@ -11,16 +11,16 @@ export class PrismaUsersRepository extends IUsersRepository {
     return user;
   }
 
-  async save(user) {
-    const createdUser = await prisma.user.create({
-      data: {
-        name: user.name,
-        email: user.email,
-        password: user.password,
-      },
+   async save(user) {
+    const userAction = await prisma.user.upsert({
+      where: { email: user.email }, 
+      update: user,                 
+      create: user,                 
     });
-    return createdUser;
+
+    return userAction;
   }
+
   async findById(id) { 
     const user = await prisma.user.findUnique({
       where: { id },

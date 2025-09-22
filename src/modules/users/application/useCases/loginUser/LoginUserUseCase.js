@@ -6,10 +6,17 @@ export class LoginUserUseCase {
     this.usersRepository = usersRepository;
   }
 
+ 
   async execute({ email, password }) {
+    
     const user = await this.usersRepository.findByEmail(email);
     if (!user) {
       throw new Error('Email or password incorrect.');
+    }
+
+   
+    if (!user.isVerified) {
+      throw new Error('Please verify your email before logging in.');
     }
 
     
@@ -18,7 +25,7 @@ export class LoginUserUseCase {
       throw new Error('Email or password incorrect.');
     }
 
-    
+   
     const token = jwt.sign(
       { id: user.id, name: user.name }, 
       process.env.JWT_SECRET,           
