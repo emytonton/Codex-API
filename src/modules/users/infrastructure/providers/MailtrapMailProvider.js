@@ -1,6 +1,6 @@
 
 import nodemailer from 'nodemailer';
-import { IMailProvider } from './IMailProvider.js';
+import { IMailProvider } from '../../domain/providers/IMailProvider.js'
 
 export class MailtrapMailProvider extends IMailProvider {
   constructor() {

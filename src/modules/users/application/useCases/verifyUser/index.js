@@ -1,5 +1,5 @@
 import { PrismaUsersRepository } from '../../../infrastructure/prisma/repositories/PrismaUsersRepository.js';
-import { MailtrapMailProvider } from '../../../../../providers/MailtrapMailProvider.js'; 
+import { MailtrapMailProvider } from '../../../infrastructure/providers/MailtrapMailProvider.js'
 import { VerifyUserUseCase } from './VerifyUserUseCase.js';
 import { VerifyUserController } from './VerifyUserController.js';
 
