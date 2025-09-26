@@ -1,10 +1,10 @@
-# Bem vindo ao Codex! <br>
+# Bem vindo ao Codex! 📜 <br>
 ## Codex é uma API de gerenciar suas leituras e promover melhor o seu hábito de ler de uma forma leve e divertida. <br>
 
 - Por que Codex?  
   - Codex era um tipo de livro usado na Antiguidade e na Idade Média, feito de folhas de pergaminho ou papiro encadernadas. Além disso, lembra código, algo que amamos por aqui 😎 <br>
 
-## Tecnologias da API do Codex
+## 👩‍💻 Tecnologias da API do Codex
 
 - Linguagem / Ambiente de Execução  
   - [![My Skills](https://skillicons.dev/icons?i=js)](https://skillicons.dev)  
@@ -23,7 +23,7 @@
 - Serviços Externos  
   - Google Books API: A API externa que usamos como nossa fonte de dados para todas as informações sobre os livros. <br>
 
-## Endpoints já implementados
+## ⛳ Endpoints já implementados
 
 | Método HTTP | Endpoint | Descrição | Autenticação Necessária |
 | :--- | :--- | :--- | :--- |
