@@ -22,3 +22,16 @@
 
 - Serviços Externos  
   - Google Books API: A API externa que usamos como nossa fonte de dados para todas as informações sobre os livros. <br>
+
+## Endpoints já implementados
+
+| Método HTTP | Endpoint | Descrição | Autenticação Necessária |
+| :--- | :--- | :--- | :--- |
+| POST | /users/register | Cadastra um novo usuário e envia um código de verificação por e-mail. | Não |
+| POST | /users/verify | Valida a conta do usuário com o código de verificação. | Não |
+| POST | /users/login | Cria uma nova sessão, permitindo o login de um usuário verificado. | Não |
+| GET | /users/profile | Lista as informações do perfil do usuário logado. | Sim |
+| PATCH | /users/profile/change-email | Inicia o processo de alteração de e-mail. | Sim |
+| POST | /profile/confirm-email-change | Confirma a alteração de e-mail com o código de verificação. | Sim |
+| GET | /books/search | Busca livros na API externa (Google Books). | Não |
+| POST | /shelves | Adiciona um livro à estante do usuário logado. | Sim |
