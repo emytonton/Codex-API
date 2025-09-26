@@ -20,6 +20,9 @@ model User {
   isVerified      Boolean  @default(false)
   verificationCode String?
   verificationCodeExpiresAt DateTime?
+  pendingEmail              String?   
+  emailChangeCode           String?   
+  emailChangeCodeExpiresAt  DateTime? 
   
   bookCases       BookCase[]
   userBooks       UserBook[]
