@@ -1,12 +1,13 @@
 
+
 import { PrismaUsersRepository } from '../../../infrastructure/prisma/repositories/PrismaUsersRepository.js';
-import { ConfirmEmailChangeUseCase } from './ConfirmEmailChangeUseCase.js'; 
+import { ConfirmEmailChangeUseCase } from './ConfirmEmailChangeUseCase.js';
 import { ConfirmEmailChangeController } from './ConfirmEmailChangeController.js';
 
 const prismaUsersRepository = new PrismaUsersRepository();
 
 const confirmEmailChangeUseCase = new ConfirmEmailChangeUseCase(
-  prismaUsers-repository
+  prismaUsersRepository
 );
 
 const confirmEmailChangeController = new ConfirmEmailChangeController(
