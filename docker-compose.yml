@@ -28,3 +28,5 @@ services:
       - ./src:/app/src
     env_file:
       - ./.env
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
