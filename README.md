@@ -35,3 +35,4 @@
 | POST | /users/profile/request-email-change | Inicia o processo de alteração de e-mail, enviando um código para o novo endereço. | Sim |
 | POST | /users/profile/confirm-email-change | Confirma a alteração de e-mail com o código de verificação. | Sim |
 | GET | /books/search | Busca livros na API externa (Google Books) usando um termo de pesquisa. | Não |
+| GET | /books/id | Busca um livro na API externa (Google Books) usando o id desse livro. | Não |
