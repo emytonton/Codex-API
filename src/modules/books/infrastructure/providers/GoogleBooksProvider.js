@@ -27,4 +27,39 @@ export class GoogleBooksProvider extends IBookProvider {
 
     return books;
   }
+
+  async findById(googleBookId) {
+    const apiKey = process.env.GOOGLE_BOOKS_API_KEY;
+    try {
+      const response = await this.api.get(`/volumes/${googleBookId}?key=${apiKey}`);
+      const item = response.data;
+
+      if (!item) {
+        throw new Error(`Book with Google ID ${googleBookId} not found.`);
+      }
+
+      
+      return {
+        id: item.id,
+        title: item.volumeInfo.title,
+        subtitle: item.volumeInfo.subtitle,
+        authors: item.volumeInfo.authors || [],
+        publisher: item.volumeInfo.publisher,
+        publishedDate: item.volumeInfo.publishedDate,
+        description: item.volumeInfo.description,
+        pageCount: item.volumeInfo.pageCount,
+        categories: item.volumeInfo.categories || [],
+        averageRating: item.volumeInfo.averageRating, 
+        ratingsCount: item.volumeInfo.ratingsCount, 
+        coverImage: item.volumeInfo.imageLinks?.thumbnail || item.volumeInfo.imageLinks?.smallThumbnail,
+        language: item.volumeInfo.language,
+      };
+    } catch (error) {
+      console.error("Error fetching book details from Google:", error.response?.data || error.message);
+      if (error.response?.status === 404) {
+        throw new Error(`Book with Google ID ${googleBookId} not found.`);
+      }
+      throw new Error('Failed to fetch book details.');
+    }
+  }
 }
